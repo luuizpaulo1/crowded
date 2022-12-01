@@ -44,7 +44,11 @@ def home():
 def bus(bus_id):
     _bus = db.session.get(Bus, bus_id)
     bus_json = _bus.json
-    return render_template("bus.html", bus=bus_json)
+    max_capacity = 80
+    total_quantity = bus_json["last_data_received"]["standing_passengers"] + bus_json["last_data_received"]["seated_passengers"]
+    capacity_percent = int((total_quantity / max_capacity) * 100)
+    return render_template("bus.html", bus=bus_json, capacity_percent=capacity_percent, max_capacity=max_capacity)
+
 
 if __name__ == '__main__':
     app.run()

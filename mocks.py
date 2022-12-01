@@ -5,6 +5,7 @@ from typing import List
 from models import Bus, BusStop, BusData
 
 MAX_SEATED_PASSENGERS = 40
+MAX_STANDING_PASSENGERS = 40
 
 bus_1_stop_names = [
     "Terminal João Goulart - Plataforma 3 (Laranja)",
@@ -75,19 +76,25 @@ def generate_fake_data(bus_stops: List[BusStop], way=1):
     bus_id = bus_stops[0].bus_id
 
     bus_data = []
-    trip_start_datetime = datetime.now()
+    trip_start_datetime = datetime.now() - timedelta(minutes=30)
     minutes_elapsed = 0
     seated_passengers = 0
     standing_passengers = 0
     total_passengers = seated_passengers + standing_passengers
     for index, stop_id in enumerate(stop_ids):
-        entering_number_of_passengers = randint(0, 20)
-        leaving_number_of_passengers = randint(0, 10)
+        fake_now = trip_start_datetime + timedelta(minutes=minutes_elapsed)
 
-        if index < len(stop_ids) / 2:  # no passengers leave if the bus has not completed (at least) half the trip
+        if fake_now > datetime.now():
+            break
+
+        entering_number_of_passengers = randint(0, 10)
+        leaving_number_of_passengers = randint(0, 20)
+
+        if index < len(stop_ids) / 3:  # no passengers leave if the bus has not completed (at least) one third of the trip
             leaving_number_of_passengers = 0
 
         if index == len(stop_ids) - 1:  # if it's the end of the trip
+            entering_number_of_passengers = 0
             leaving_number_of_passengers = total_passengers
 
         total_passengers += entering_number_of_passengers - leaving_number_of_passengers
@@ -97,9 +104,12 @@ def generate_fake_data(bus_stops: List[BusStop], way=1):
         if total_passengers > MAX_SEATED_PASSENGERS:
             seated_passengers = MAX_SEATED_PASSENGERS
             standing_passengers = total_passengers - seated_passengers
+            if standing_passengers > MAX_STANDING_PASSENGERS:
+                standing_passengers = MAX_STANDING_PASSENGERS
         else:
             seated_passengers = total_passengers
             standing_passengers = 0
+
         bus_data.append(
             BusData(
                 bus_id=bus_id,
@@ -107,8 +117,8 @@ def generate_fake_data(bus_stops: List[BusStop], way=1):
                 way=way,
                 seated_passengers=seated_passengers,
                 standing_passengers=standing_passengers,
-                created_at=trip_start_datetime + timedelta(minutes=minutes_elapsed),
-                updated_at=trip_start_datetime + timedelta(minutes=minutes_elapsed),
+                created_at=fake_now,
+                updated_at=fake_now,
             )
         )
 

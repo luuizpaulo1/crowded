@@ -44,10 +44,10 @@
                     </div>
 
                     <div class="lotacao">
-                        <p class="lotacao__titulo">Este ônibus tem lotação máxima de 65 pessoas.</p>
+                        <p class="lotacao__titulo">Este ônibus tem lotação máxima de {{ max_capacity }} pessoas.</p>
 
-                        <div id="barra-de-lotacao" class="barra-de-lotacao" style="--valor: 0">
-                            0% lotado
+                        <div id="barra-de-lotacao" class="barra-de-lotacao" style="--valor: {{ capacity_percent }}">
+                            {{ capacity_percent }}% lotado
                         </div>
                     </div>
                 </div>

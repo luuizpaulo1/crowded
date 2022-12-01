@@ -60,6 +60,6 @@ class Bus(db.Model):
                 "bus_stop_id": last_data_received.bus_stop_id,
                 "seated_passengers": last_data_received.seated_passengers,
                 "standing_passengers": last_data_received.standing_passengers,
-                "created_at": last_data_received.created_at
+                "created_at": last_data_received.created_at.strftime("%d/%m/%Y às %H:%M:%S")
             } if last_data_received else None,
         }

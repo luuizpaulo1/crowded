@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="../static/css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-{#    <link rel="icon" href="/static/img/favicon.png">#}
-{#    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=MuseoModerno&display=swap" rel="stylesheet">#}
 </head>
 <body>
 <main>
@@ -29,19 +27,14 @@
                             <li>
                                 <a class="link-onibus" href="/bus/{{ bus.id }}">
                                     <div class="imagem-onibus">
-                                        <img src="https://viatrolebus.com.br/wp-content/uploads/2021/09/Apache-VIP-Caio-Niter%C3%B3i.jpg"
-                                             alt=""/>
+                                        <img src="https://viatrolebus.com.br/wp-content/uploads/2021/09/Apache-VIP-Caio-Niter%C3%B3i.jpg" alt=""/>
                                     </div>
-
-{#                                    <p class="nome-onibus">Número do ônibus</p>#}
                                     <p class="ponto-atual">Ponto atual: {{ bus.last_data_received.bus_stop_name }}</p>
-                                    <h6>atualizado às {{ bus.last_data_received.created_at.isoformat() }}</h6>
+                                    <h6>atualizado às {{ bus.last_data_received.created_at }}</h6>
                                 </a>
                             </li>
                         </ul>
-
                     </li>
-
                 </ul>
             </div>
             {% endfor %}
