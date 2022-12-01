@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotatômetro - Onibus {{ nome_onibus }} </title>
+
+    <link rel="stylesheet" href="/static/css/onibus.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="/static/img/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=MuseoModerno&display=swap" rel="stylesheet">
+    <script>
+        window.nome_onibus = "{{ nome_onibus }}"
+    </script>
+</head>
+<body>
+<main>
+    <div class="container">
+        <div class="caixa caixa--esquema-invertido">
+            <header class="caixa__header">
+                <h1 class="caixa__titulo">
+                    {{ bus.name}}
+                </h1>
+
+                <div class="caixa__sub-titulo">
+                    Ônibus {{ bus.name }}
+                </div>
+            </header>
+
+            <div class="caixa__corpo">
+                <div class="linha">
+                    <div class="metricas">
+                        <div class="metricas__item">
+                            <img src="/static/img/pessoa-sentada.png" alt="" height="200">
+                            <p id="pessoas-sentadas" class="metricas__valor">{{ bus.last_data_received.seated_passengers }}</p>
+                        </div>
+
+                        <div class="metricas__item">
+                            <img src="/static/img/pessoa-em-pe.png" alt="" height="200">
+                            <p id="pessoas-em-pe" class="metricas__valor">{{ bus.last_data_received.standing_passengers }}</p>
+                        </div>
+                    </div>
+
+                    <div class="lotacao">
+                        <p class="lotacao__titulo">Este ônibus tem lotação máxima de 65 pessoas.</p>
+
+                        <div id="barra-de-lotacao" class="barra-de-lotacao" style="--valor: 0">
+                            0% lotado
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="rota">
+                    <div class="ultimo-ponto">
+                        <h2 class="ultimo-ponto__titulo">Último ponto:</h2>
+                        <p id="nome-ultimo-ponto" class="ultimo-ponto__nome">{{ bus.last_data_received.bus_stop_name}}</p>
+                    </div>
+
+                    <div class="desenho">
+                        <div class="bordas"></div>
+                        <div class="estrada"></div>
+                        <img src="/static/img/onibus.png" alt="" class="onibus">
+                    </div>
+                </div>
+
+                <div class="ultima-leitura">
+                        <span class="ultima-leitura__wrapper">
+                            Última leitura em: <span id="data-leitura">23/12/2002</span> às <span id="horario-leitura">14:30</span>
+                        </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="/static/js/pagina-onibus.js" defer=""></script>
+</body>
+</html>

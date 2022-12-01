@@ -31,6 +31,40 @@ bus_1_stop_names = [
     "Ponto Final - Canto Do Rio"
 ]
 
+bus_2_stop_names = [
+    "Rua Doze Centro Niterói - Rio De Janeiro 24030 Brasil",
+    "Centro Niterói - Rj 24030-250 Brasil",
+    "Rua Professor Ernani Pires De Mello 58 São Domingos Niterói - Rj 24210-130 Brasil",
+    "R. Visc. De Morais 176-214 - Ingá Niterói - Rj 24210-145 Brasil",
+    "Rua Visconde De Morais 490",
+    "R. Pres. Pedreira 142-156 - Ingá Niterói - Rj 24210-470 Brasil",
+    "R. Dr. Paulo Alves 269-365 - Ingá Niterói - Rj 24210-445 Brasil",
+    "Rua Álvares De Azevedo 2 Icaraí Niterói - Rj 24220-301 Brasil",
+    "Avenida Jornalista Alberto Francisco Torres 329 Icaraí Niterói - Rj 24220-301 Brasil",
+    "Avenida Jornalista Alberto Francisco Torres 453",
+    "Rua Joaquim Távora, 50",
+    "Rua Joaquim Távora 138 Icaraí Niterói - Rj 24220-301 Brasil",
+    "Rua Joaquim Távora 181 Icaraí Niterói - Rj 24220-301 Brasil",
+    "Rua Joaquim Távora Próximo Ao 800-866 - Icaraí Niterói - Rj 24230-540 Brasil",
+    "Avenida Quintino Bocaiúva 127",
+    "Avenida Quintino Bocaiúva 127",
+    "Av. Quintino Bocaiúva 70-168 - São Francisco Niterói - Rj Brasil",
+    "Avenida Quintino Bocaiúva 976 São Francisco Niterói - Rj 24370-001 Brasil",
+    "Avenida Prefeito Silvio Picanço Próximo Ao 585-595 - Charitas Niterói - Rj 24360-030 Brasil",
+    "Avenida Prefeito Sílvio Picanço Charitas Niterói - Rj 24370-001 Brasil",
+    "Avenida Prefeito Silvio Picanço 449",
+    "Avenida Prefeito Silvio Picanço Próximo Ao 1646-1746 - Charitas Niterói - Rj 24370-135 Brasil",
+    "Charitas Niterói - Rj 24370-195 Brasil",
+    "Avenida Carlos Ermelindo Marins Jurujuba Niterói - Rj 24370-195 Brasil",
+    "Praia De Jurujuba 82 - Jurujuba Niterói - Rj 24370-197 Brasil",
+    "Praia De Jurujuba 87 - Jurujuba Niterói - Rj 24370-197 Brasil",
+    "Avenida Carlos Ermelindo Marins 15 Jurujuba Niterói - Rj 24370-195 Brasil",
+    "Avenida Carlos Ermelindo Marins 136 Jurujuba Niterói - Rj 24370-195 Brasil",
+    "Rua Lauro Sodré 34 - Jurujuba Niterói - Rj 24370-300 Brasil",
+    "Av. Carlos Ermelindo Marins 2193-2437 - Jurujuba Niterói - Rj Brasil",
+    "Travessa Beco Do Cahfaris Jurujuba Niterói - Rio De Janeiro Brasil",
+]
+
 
 def generate_fake_data(bus_stops: List[BusStop], way=1):
     stop_ids = [bus_stop.id for bus_stop in bus_stops]
@@ -83,24 +117,39 @@ def generate_fake_data(bus_stops: List[BusStop], way=1):
 
 
 def generate_mocks(db):
-    bus_1 = Bus(name="47")
+    bus_1 = Bus(name="47 - Centro x Canto do Rio")
     update_bus(db, bus_1)
-    bus_stops = [
+    bus_1_stops = [
         BusStop(
             bus_id=bus_1.id,
             name=bus_stop_name,
         )
         for bus_stop_name in bus_1_stop_names
     ]
-    bus_1.stops = bus_stops
+    bus_1.stops = bus_1_stops
     update_bus(db, bus_1)
-    bus_data = generate_fake_data(bus_stops)
+    bus_1_data = generate_fake_data(bus_1_stops)
+    add_fake_data(db, bus_1_data)
+
+    bus_2 = Bus(name="33 - Centro x Jurujuba")
+    update_bus(db, bus_2)
+    bus_2_stops = [
+        BusStop(
+            bus_id=bus_2.id,
+            name=bus_stop_name,
+        )
+        for bus_stop_name in bus_2_stop_names
+    ]
+    bus_2.stops = bus_2_stops
+    update_bus(db, bus_2)
+    bus_2_data = generate_fake_data(bus_2_stops)
+    add_fake_data(db, bus_2_data)
+
+
+def add_fake_data(db, bus_data):
     for datum in bus_data:
         db.session.add(datum)
         db.session.commit()
-
-    # bus_1.data = bus_data
-    # update_bus(db, bus_1)
 
 
 def update_bus(db, bus):

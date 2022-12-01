@@ -1,0 +1,391 @@
+.metricas_item, .ultima-leiturawrapper {
+    border-radius: 8px
+}
+
+.barra-de-lotacao {
+    border-radius: 4px
+}
+
+.ultimo-ponto, .ultima-leiturawrapper, .caixasub-titulo {
+    font-family: "MuseoModerno", sans-serif
+}
+
+.container {
+    display: block;
+    width: 100%;
+    max-width: 1210px;
+    margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px
+}
+
+body {
+    font-family: "Audiowide", "Comic Sans MS", sans-serif;
+    color: #dadada;
+    background-color: #dadada
+}
+
+{
+    scrollbar-color: #4a2512 rgba(0, 0, 0, 0)
+;
+    scrollbar-width: thin
+}
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #4a2512
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0)
+}
+
+::selection {
+    background-color: rgba(218, 218, 218, .5)
+}
+
+main {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 120px;
+    padding-bottom: 120px
+}
+
+{
+    margin: 0
+;
+    padding: 0
+;
+    font-family: inherit
+}
+
+::before, ::after {
+    box-sizing: border-box
+}
+
+input, button, textarea {
+    border: 0;
+    outline: none;
+    background: none;
+    display: block
+}
+
+input[type=submit] {
+    -webkit-appearance: none;
+    appearance: none
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer
+}
+
+a:not(:disabled), button:not(:disabled) {
+    cursor: pointer
+}
+
+b {
+    font-weight: bolder
+}
+
+fieldset {
+    border: none
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto
+}
+
+address {
+    font-style: normal
+}
+
+ul {
+    list-style: none
+}
+
+.caixa_titulo {
+    font-size: 36px
+}
+
+.caixasub-titulo {
+    font-size: 24px
+}
+
+.caixa {
+    border-radius: 8px;
+    background-color: #72bca5
+}
+
+.caixaheader {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: #4a2512
+}
+
+.caixacorpo {
+    padding-left: 24px;
+    padding-right: 24px
+}
+
+.caixatitulo {
+    padding-top: .5em;
+    padding-bottom: .5em
+}
+
+.caixasub-titulo {
+    padding-top: .6em;
+    padding-bottom: .6em;
+    background-color: #bc0b27
+}
+
+.caixatitulo, .caixasub-titulo {
+    text-align: center;
+    padding-left: 24px;
+    padding-right: 24px
+}
+
+.linha {
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    display: flex;
+    flex-wrap: wrap
+}
+
+.linha > * {
+    margin-left: 16px;
+    margin-right: 16px
+}
+
+.metricas {
+    display: grid;
+    grid-template-columns:repeat(auto-fill, minmax(min-content, 132px));
+    gap: 54px;
+    flex: 0 1 320px
+}
+
+.metricas_titulo {
+    font-size: 36px
+}
+
+.caixa__sub-titulo {
+    font-size: 24px
+}
+
+.caixa {
+    border-radius: 8px;
+    background-color: #72bca5
+}
+
+.caixa__header {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: #4a2512
+}
+
+.caixa__corpo {
+    padding-left: 24px;
+    padding-right: 24px
+}
+
+.caixa__titulo {
+    padding-top: .5em;
+    padding-bottom: .5em
+}
+
+.caixa__sub-titulo {
+    padding-top: .6em;
+    padding-bottom: .6em;
+    background-color: #bc0b27
+}
+
+.caixa__titulo, .caixa__sub-titulo {
+    text-align: center;
+    padding-left: 24px;
+    padding-right: 24px
+}
+
+.linha {
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    display: flex;
+    flex-wrap: wrap
+}
+
+.linha > * {
+    margin-left: 16px;
+    margin-right: 16px
+}
+
+.metricas {
+    display: grid;
+    grid-template-columns:repeat(auto-fill, minmax(min-content, 132px));
+    gap: 54px;
+    flex: 0 1 320px
+}
+
+.metricas_item {
+    display: flex;
+    justify-content: space-between;
+    height: 132px;
+    background-color: #bc0b27;
+    padding: 12px
+}
+
+.metricasitem img {
+    height: 100%;
+    width: auto
+}
+
+.metricasvalor {
+    font-size: 28px;
+    margin-left: .2em;
+    padding-top: .2em;
+    color: #dadada
+}
+
+.lotacao {
+    flex: 1 1 320px;
+    align-self: flex-end;
+    margin-top: 18px
+}
+
+.lotacaotitulo {
+    margin-bottom: .5em
+}
+
+.barra-de-lotacao {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    text-align: center;
+    padding: .2em;
+    font-weight: bold;
+    border: 4px solid #4a2512;
+    overflow: hidden
+}
+
+.barra-de-lotacao::before, .barra-de-lotacao::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    background-color: #008a04;
+    height: 100%
+}
+
+.barra-de-lotacao::before {
+    width: calc(var(--valor, 0) * 1%);
+    left: 0
+}
+
+.barra-de-lotacao::after {
+    width: 8%;
+    min-width: 16px;
+    clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+    left: calc(var(--valor, 0) * 1%)
+}
+
+.rota {
+    padding-bottom: 48px
+}
+
+.ultimo-ponto {
+    position: relative;
+    max-width: 20ch;
+    padding: 42px 8px;
+    border-radius: 50%;
+    background-color: #bc0b27;
+    z-index: 1;
+    font-size: 18px;
+    text-align: center
+}
+
+@media screen and (max-width: 600px) {
+    .ultimo-ponto {
+        margin-bottom: 56px;
+        margin-left: auto;
+        margin-right: auto
+    }
+}
+
+/*.ultimo-pontotitulo {*/
+/*    font-size: 1.2;*/
+/*    line-height: 1.2*/
+/*}*/
+
+.ultimo-pontonome {
+    line-height: 1
+}
+
+.desenho {
+    position: relative;
+    height: 100px
+}
+
+.bordas {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    height: 100%
+}
+
+.bordas::before, .bordas::after {
+    content: "";
+    height: 100%;
+    width: 8px;
+    border-radius: 4px;
+    background-color: #dadada
+}
+
+.estrada {
+    position: absolute;
+    top: calc(50% - 4px);
+    width: 100%;
+    height: 8px;
+    background-color: #dadada
+}
+
+.onibus {
+    display: block;
+    position: absolute;
+    bottom: calc(50% + 4px);
+    right: 45%;
+    transform: translateX(50%);
+    width: 80%;
+    height: auto;
+    max-width: 200px
+}
+
+.ultima-leitura {
+    padding: 0 0 48px
+}
+
+.ultima-leitura_wrapper {
+    padding-top: .2em;
+    padding-bottom: .2em;
+    padding-left: 2em;
+    padding-right: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    background-color: #bc0b27
+}
+
+/*# sourceMappingURL=onibus.css.map */

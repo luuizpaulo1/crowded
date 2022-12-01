@@ -1,0 +1,342 @@
+.link-onibus {
+    border-radius: 8px
+}
+
+.ponto-atual, .caixa_sub-titulo {
+    font-family: "MuseoModerno", sans-serif
+}
+
+.container {
+    display: block;
+    width: 100%;
+    max-width: 1210px;
+    margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px
+}
+
+body {
+    font-family: "Audiowide", "Comic Sans MS", sans-serif;
+    color: #dadada;
+    background-color: #dadada
+}
+
+{
+    scrollbar-color: #4a2512 rgba(0, 0, 0, 0)
+;
+    scrollbar-width: thin
+}
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #4a2512
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0)
+}
+
+::selection {
+    background-color: rgba(218, 218, 218, .5)
+}
+
+main {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+
+{
+    margin: 0
+;
+    padding: 0
+;
+    font-family: inherit
+}
+
+::before, ::after {
+    box-sizing: border-box
+}
+
+input, button, textarea {
+    border: 0;
+    outline: none;
+    background: none;
+    display: block
+}
+
+input[type=submit] {
+    -webkit-appearance: none;
+    appearance: none
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer
+}
+
+a:not(:disabled), button:not(:disabled) {
+    cursor: pointer
+}
+
+b {
+    font-weight: bolder
+}
+
+fieldset {
+    border: none
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto
+}
+
+address {
+    font-style: normal
+}
+
+ul {
+    list-style: none
+}
+
+.caixa_titulo {
+    font-size: 36px
+}
+
+.caixasub-titulo {
+    font-size: 24px
+}
+
+.caixa {
+    border-radius: 8px;
+    background-color: #72bca5
+}
+
+.caixaheader {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: #4a2512
+}
+
+.caixacorpo {
+    padding-left: 24px;
+    padding-right: 24px
+}
+
+.caixatitulo {
+    padding-top: .5em;
+    padding-bottom: .5em
+}
+
+.caixasub-titulo {
+    padding-top: .6em;
+    padding-bottom: .6em;
+    background-color: #bc0b27
+}
+
+.caixatitulo, .caixa_sub-titulo {
+    text-align: center;
+    padding-left: 24px;
+    padding-right: 24px
+}
+
+.lista-de-linhas {
+    padding-top: 48px;
+    padding-bottom: 12px
+}
+
+.lista-de-onibus {
+    margin-left: -36px;
+    margin-right: -36px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center
+}
+
+.lista-de-onibus li {
+    margin-left: 36px;
+    margin-right: 36px;
+    margin-bottom: 36px;
+    flex: 0 1 280px
+}
+
+.link-onibus {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 16px;
+    padding-bottom: 8px;
+    display: block;
+    background-color: #4a2512;
+    color: #c9c9c9
+}
+
+.nome-da-linha {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 1em
+}
+
+.nome-da-linha::after {
+    content: "";
+    display: block;
+    flex: 1 1 auto;
+    height: 2px;
+    margin-left: 8px;
+    background-color: #dadada
+}
+
+.nome-onibus {
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: .2em
+}
+
+.ponto-atual {
+    font-size: 14px
+}
+
+.imagem-onibus {
+    position: relative;
+    margin-bottom: 2px
+}
+
+.imagem-onibus::before {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-top: 83.3333333333%
+}
+
+.imagem-onibus > _titulo {
+    font-size: 36px
+}
+
+.caixa__sub-titulo {
+    font-size: 24px
+}
+
+.caixa {
+    border-radius: 8px;
+    background-color: #72bca5
+}
+
+.caixa__header {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: #4a2512
+}
+
+.caixa__corpo {
+    padding-left: 24px;
+    padding-right: 24px
+}
+
+.caixa__titulo {
+    padding-top: .5em;
+    padding-bottom: .5em
+}
+
+.caixa__sub-titulo {
+    padding-top: .6em;
+    padding-bottom: .6em;
+    background-color: #bc0b27
+}
+
+.caixa__titulo, .caixa__sub-titulo {
+    text-align: center;
+    padding-left: 24px;
+    padding-right: 24px
+}
+
+.lista-de-linhas {
+    padding-top: 48px;
+    padding-bottom: 12px
+}
+
+.lista-de-onibus {
+    margin-left: -36px;
+    margin-right: -36px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center
+}
+
+.lista-de-onibus li {
+    margin-left: 36px;
+    margin-right: 36px;
+    margin-bottom: 36px;
+    flex: 0 1 280px
+}
+
+.link-onibus {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 16px;
+    padding-bottom: 8px;
+    display: block;
+    background-color: #4a2512;
+    color: #c9c9c9
+}
+
+.nome-da-linha {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 1em
+}
+
+.nome-da-linha::after {
+    content: "";
+    display: block;
+    flex: 1 1 auto;
+    height: 2px;
+    margin-left: 8px;
+    background-color: #dadada
+}
+
+.nome-onibus {
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: .2em
+}
+
+.ponto-atual {
+    font-size: 14px
+}
+
+.imagem-onibus {
+    position: relative;
+    margin-bottom: 2px
+}
+
+.imagem-onibus::before {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-top: 83.3333333333%
+}
+
+.imagem-onibus > * {
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+.imagem-onibus img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+/*# sourceMappingURL=index.css.map */

@@ -24,7 +24,7 @@ class BusStop(db.Model):
     bus_id = Column(Integer, ForeignKey("bus.id"))
     name = Column(String)
     created_at = Column(DateTime(), server_default=func.now())
-    updated_at = Column(DateTime(), onupdate=func.now())
+    updated_at = Column(DateTime(), server_default=func.now(), onupdate=func.now())
     data = relationship(BusData, backref="bus_stop")
 
 
