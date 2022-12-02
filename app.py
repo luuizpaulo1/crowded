@@ -32,6 +32,12 @@ def get_buses():
     return buses_json
 
 
+@app.route("/api/bus/<int:bus_id>")
+def get_bus(bus_id: int) :
+    _bus = db.session.get(Bus, bus_id)
+    return _bus.json
+
+
 @app.route("/")
 def home():
     buses_json = []
